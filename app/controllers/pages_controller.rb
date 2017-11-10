@@ -13,7 +13,9 @@ class PagesController < ApplicationController
 
   def register
   end
-
+  
+  def product_view
+  end
   
 
   def logout
