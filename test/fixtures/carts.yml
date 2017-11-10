@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  customer: one
+  quantity: MyString
+  total_amount: MyString
+  is_checked_out: false
+
+two:
+  product: two
+  customer: two
+  quantity: MyString
+  total_amount: MyString
+  is_checked_out: false

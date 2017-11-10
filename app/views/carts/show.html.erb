@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @cart.product %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @cart.customer %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @cart.quantity %>
+</p>
+
+<p>
+  <strong>Total amount:</strong>
+  <%= @cart.total_amount %>
+</p>
+
+<p>
+  <strong>Is checked out:</strong>
+  <%= @cart.is_checked_out %>
+</p>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

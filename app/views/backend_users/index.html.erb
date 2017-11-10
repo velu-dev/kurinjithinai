@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Backend Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Mobile number</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Role</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backend_users.each do |backend_user| %>
+      <tr>
+        <td><%= backend_user.user_name %></td>
+        <td><%= backend_user.mobile_number %></td>
+        <td><%= backend_user.email_id %></td>
+        <td><%= backend_user.password %></td>
+        <td><%= backend_user.role %></td>
+        <td><%= link_to 'Show', backend_user %></td>
+        <td><%= link_to 'Edit', edit_backend_user_path(backend_user) %></td>
+        <td><%= link_to 'Destroy', backend_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Backend User', new_backend_user_path %>

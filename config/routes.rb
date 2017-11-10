@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :product_categories
+  resources :orders
+  resources :carts
+  resources :customer_details
+  resources :customers
+  resources :products
+  resources :offers
+  resources :units
+  resources :backend_users
+  resources :roles
   get 'pages/dashboard'
 
   get 'pages/login'
