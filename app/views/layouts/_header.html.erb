@@ -12,6 +12,7 @@
 					
 					<li><a href="#" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
 					<li><a href="#" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
+
 					<%unless current_user.present?%>
 					<li><a href="<%= pages_register_path%>" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
 					<li><a href="<%= pages_login_path%>" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
@@ -19,9 +20,10 @@
 
 					<li><a href="<%= pages_logout_path%>" ><i class="fa fa-user" aria-hidden="true"></i>Logout</a></li>
 					<% end %>
+
 				</ul>	
 			</div>
-			
+			<%=link_to "Admin", pages_admin_dashboard_path %> 
 			<div class="header-ri">
 				<ul class="social-top">
 					<li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>

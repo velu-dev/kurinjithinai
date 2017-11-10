@@ -25,6 +25,9 @@ class PagesController < ApplicationController
     else
       redirect_to pages_login_path
     end
+
+  def product_view
+
   end
   
   def logout
