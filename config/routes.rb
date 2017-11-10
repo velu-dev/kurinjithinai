@@ -1,22 +1,23 @@
 Rails.application.routes.draw do
- 
+
   get 'pages/dashboard'
-
-  get 'pages/login'
-
-  get 'pages/logout'
-
-  get 'pages/contact'
-
-  get 'pages/about'
   
-  get 'pages/register'
-
+    get 'pages/login'
+  
+    get 'pages/logout'
+  
+    get 'pages/contact'
+  
+    get 'pages/about'
+    
+    get 'pages/register'
+    
   get 'pages/admin_dashboard'
 
-  get 'pages/product_view'
+  get 'pages/product_view
 
-  
+  post 'pages/login_attempt'
+
   resources :product_categories
   resources :orders
   resources :carts

@@ -1,4 +1,28 @@
 <div class="product">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  <li data-target="#myCarousel" data-slide-to="1"></li>
+  <li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner" role="listbox">
+  <div class="item active">
+   <a href="#"> <%= image_tag 'ba.jpg' , class: "first-slide"%></a>
+ 
+  </div>
+  <div class="item">
+   <a href="#"> <%=image_tag "ba1.jpg",  class: "second-slide "%></a>
+   
+  </div>
+  <div class="item">
+    <a href="#"><%=image_tag  "ba2.jpg", class: "third-slide"%></a>
+    
+  </div>
+</div>
+
+</div><!-- /.carousel -->
+
 <div class="container">
     <div class="spec ">
         <h3>Special Offers</h3>

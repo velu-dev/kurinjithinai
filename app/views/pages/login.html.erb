@@ -12,23 +12,25 @@
     <div class="main-agileits">
             <div class="form-w3agile">
                 <h3>Login</h3>
-                <form action="#" method="post">
+                <%= form_tag(:action => 'login_attempt') do %>
+                    <label>Email or Mobile</label>
                     <div class="key">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <input  type="text" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                        <i class="fa fa-envelope" style="font-size : 10px" aria-hidden="true"></i>
+                        <%= text_field_tag(:username_or_email)%>
                         <div class="clearfix"></div>
                     </div>
+                    <label>Password</label>
                     <div class="key">
                         <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input  type="password" value="Password" name="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                        <%= text_field_tag(:password) %>
                         <div class="clearfix"></div>
                     </div>
                     <input type="submit" value="Login">
-                </form>
+                <% end %>
             </div>
             <div class="forg">
                 <a href="#" class="forg-left">Forgot Password</a>
-                <a href="register.html" class="forg-right">Register</a>
+                <a href="<%= pages_register_path%>" class="forg-right">Register</a>
             <div class="clearfix"></div>
             </div>
         </div>

@@ -31,8 +31,12 @@
     <div class="col-md-3 footer-grid">
         <h3>My Account</h3>
         <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+        <%unless current_user.present?%>
+            <li><a href="<%= pages_login_path%>">Login</a></li>
+            <li><a href="<%=pages_register_path%>">Register</a></li>
+            <%else%>
+            <li><a href="<%=pages_logout_path%>">Logout</a></li>
+            <%end%>            
             <li><a href="wishlist.html">Wishlist</a></li>
             
         </ul>
@@ -62,7 +66,7 @@
                 </div>
         </div>
     <div class="copy-right">
-        <p> &copy; 2016 Big store. All Rights Reserved | Design by  <a href=""> BSm Technologies</a></p>
+        <p> &copy; 2016 Big store. All Rights Reserved | Design by  <a href="veluiknoe.000webhostapp.com"> BSm Technologies</a></p>
     </div>
 </div>
 </div>
