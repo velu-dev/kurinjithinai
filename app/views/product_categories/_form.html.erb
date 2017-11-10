@@ -10,23 +10,30 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :cat_name %>
-    <%= form.text_field :cat_name, id: :product_category_cat_name %>
+<div class ="row">
+  <div class= "col-md-6">
+  <div class="form-group">
+    <%= form.label :category_name, class: "control-label" %>
+    <%= form.text_field :cat_name, id: :product_category_cat_name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :cat_code %>
-    <%= form.text_field :cat_code, id: :product_category_cat_code %>
+  <div class="form-group">
+    <%= form.label :category_code, class: "control-label" %>
+    <%= form.text_field :cat_code, id: :product_category_cat_code, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :unit_id %>
-    <%= form.text_field :unit_id, id: :product_category_unit_id %>
+  <div class="form-group">
+    <%= form.label :unit_id, class: "control-label" %>
+    <%#= form.text_field :unit_id, id: :product_category_unit_id, class: "form-control" %>
+     <%= select_tag "products_category[unit_id]", options_from_collection_for_select(Unit.all, "id", "unit_name"), {class: "form-control", required: :true, id: :spare_unit_id, include_blank: true} %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+   <%= button_tag(type: "submit", class: "btn btn-primary pull-right") do %>
+    <i class='fa fa-check' aria-hidden='true'></i> Save
+  <% end %>
+
   </div>
+</div>
+</div>
 <% end %>
