@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     
   get 'pages/admin_dashboard'
 
-  get 'pages/product_view
+  get 'pages/product_view'
 
   post 'pages/login_attempt'
 
