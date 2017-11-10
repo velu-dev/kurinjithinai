@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'pages/register'
 
   get 'pages/admin_dashboard'
+
+  get 'pages/product_view'
+
   
   resources :product_categories
   resources :orders

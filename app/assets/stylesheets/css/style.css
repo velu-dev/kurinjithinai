@@ -122,10 +122,16 @@ img.img-head {
 .hyper span {
   z-index:2;
   position:relative;
+
 }
 .hyper:hover {
   color: white;
+
 }
+.hyper span:hover{
+  color: #ffffff;
+}
+
 .hyper:hover:before {
   right: 95%;
     opacity: 1;
@@ -139,7 +145,7 @@ img.img-head {
   content: '';
   display: block;
   position: absolute; 
-  background:#039445;
+  background:#FAB005;
   width:4px;
   height: 100%;
   top: 0;
@@ -151,7 +157,7 @@ img.img-head {
   content: '';
   display: block;
   position: absolute; 
-  background:#FAB005 ;
+  background:#039445;
   width: 100%;
   height: 100%;
   top: 0;
@@ -365,14 +371,17 @@ nav.navbar.navbar-default {
 
 
 
-
+.imag_size{
+  width: 100%;
+  height:100%;
+}
 
 /*--nav--*/
 .multi-column-dropdown li a {
     color: #999 !important;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    background-color:#FAB005;
+    background-color:#039445;
     color: #fff;
 }
 .nav > li > a {
