@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @product.quantity %>
+</p>
+
+<p>
+  <strong>Min quantity:</strong>
+  <%= @product.min_quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @product.discount %>
+</p>
+
+<p>
+  <strong>Subscription date:</strong>
+  <%= @product.subscription_date %>
+</p>
+
+<p>
+  <strong>Min delivery date:</strong>
+  <%= @product.min_delivery_date %>
+</p>
+
+<p>
+  <strong>Product category:</strong>
+  <%= @product.product_category %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

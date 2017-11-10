@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer_name: MyString
+  products: MyString
+  discount_percent: MyString
+  validity: MyString
+
+two:
+  offer_name: MyString
+  products: MyString
+  discount_percent: MyString
+  validity: MyString
