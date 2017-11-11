@@ -26,6 +26,12 @@ class PagesController < ApplicationController
       redirect_to pages_login_path
     end
   end
+
+
+  def product_view
+
+  end
+
   
   def logout
     session[:user_id]=nil

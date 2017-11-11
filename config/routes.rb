@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'pages/register'
 
     post 'pages/login_attempt'
+    
   resources :product_categories
   resources :orders
   resources :carts
