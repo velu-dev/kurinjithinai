@@ -1,3 +1,6 @@
+Rails.application.routes.draw do
+  
+  get 'pages/dashboard'
   
     get 'pages/login'
   
@@ -8,13 +11,8 @@
     get 'pages/about'
     
     get 'pages/register'
-    
-  get 'pages/admin_dashboard'
 
-  get 'pages/product_view
-
-  post 'pages/login_attempt'
-
+    post 'pages/login_attempt'
   resources :product_categories
   resources :orders
   resources :carts
@@ -25,6 +23,8 @@
   resources :units
   resources :backend_users
   resources :roles
+  
+  
 root "pages#dashboard"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
