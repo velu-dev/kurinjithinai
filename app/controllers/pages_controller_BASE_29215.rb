@@ -13,6 +13,10 @@ class PagesController < ApplicationController
 
   def register
   end
+<<<<<<< Temporary merge branch 1
+  
+  def product_view
+=======
 
   def login_attempt
     username = params[:username_or_email]
@@ -25,13 +29,8 @@ class PagesController < ApplicationController
     else
       redirect_to pages_login_path
     end
+>>>>>>> Temporary merge branch 2
   end
-
-
-  def product_view
-
-  end
-
   
   def logout
     session[:user_id]=nil

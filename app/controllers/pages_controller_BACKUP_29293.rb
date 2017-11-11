@@ -25,6 +25,12 @@ class PagesController < ApplicationController
     else
       redirect_to pages_login_path
     end
+<<<<<<< HEAD
+=======
+
+  def product_view
+
+>>>>>>> origin/velusev
   end
 
 
