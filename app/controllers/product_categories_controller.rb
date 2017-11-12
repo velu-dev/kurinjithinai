@@ -25,7 +25,7 @@ class ProductCategoriesController < ApplicationController
   # POST /product_categories.json
   def create
     @product_category = ProductCategory.new(product_category_params)
-
+    @product_category.unit_id = params[:unit_id]
     respond_to do |format|
       if @product_category.save
         format.html { redirect_to @product_category, notice: 'Product category was successfully created.' }

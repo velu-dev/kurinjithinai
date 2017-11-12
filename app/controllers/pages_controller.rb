@@ -1,5 +1,10 @@
 class PagesController < ApplicationController
   def dashboard
+    if params[:id].present?
+      @products = Product.where(product_category_id: params[:id].to_i)
+    else
+    @products = Product.all
+    end
   end
 
   def login
@@ -12,6 +17,8 @@ class PagesController < ApplicationController
   end
 
   def register
+  end
+  def contact
   end
 
   def login_attempt

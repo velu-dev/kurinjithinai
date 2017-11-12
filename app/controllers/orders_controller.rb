@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    if params[:id].present?
+    @orders = Order.where(customer_id: current_user.id)
+    else
+      @orders = Order.all
+    end
   end
 
   # GET /orders/1
@@ -15,6 +19,14 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+  end
+
+  def order
+    product = Product.find(params[:product])
+    user = current_user
+    @order = Order.create!(product_id: product.id, customer_id: user.id)
+    redirect_to @order
+
   end
 
   # GET /orders/1/edit

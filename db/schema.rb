@@ -52,11 +52,14 @@ ActiveRecord::Schema.define(version: 20171110174105) do
 
   create_table "customers", force: :cascade do |t|
     t.string "full_name"
+    t.string "profile_pic"
     t.string "mobile_number"
     t.string "email_id"
     t.string "password"
+    t.bigint "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_customers_on_role_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -70,7 +73,7 @@ ActiveRecord::Schema.define(version: 20171110174105) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "product_id"
-    t.string "customer_references"
+    t.bigint "customer_id"
     t.string "quantity"
     t.string "total_cost"
     t.string "payment"
@@ -79,6 +82,7 @@ ActiveRecord::Schema.define(version: 20171110174105) do
     t.string "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
   end
 
@@ -93,6 +97,9 @@ ActiveRecord::Schema.define(version: 20171110174105) do
 
   create_table "products", force: :cascade do |t|
     t.string "product_name"
+    t.string "product_image1"
+    t.string "product_image2"
+    t.string "product_image3"
     t.string "quantity"
     t.string "min_quantity"
     t.string "price"
@@ -124,6 +131,8 @@ ActiveRecord::Schema.define(version: 20171110174105) do
   add_foreign_key "carts", "customers"
   add_foreign_key "carts", "products"
   add_foreign_key "customer_details", "customers"
+  add_foreign_key "customers", "roles"
+  add_foreign_key "orders", "customers"
   add_foreign_key "orders", "products"
   add_foreign_key "product_categories", "units"
   add_foreign_key "products", "product_categories"

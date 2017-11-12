@@ -1,44 +1,108 @@
-<p id="notice"><%= notice %></p>
+<!--p id="notice"><%#= notice %></p>
 
 <p>
   <strong>Product name:</strong>
-  <%= @product.product_name %>
+  <%#= @product.product_name %>
 </p>
 
 <p>
   <strong>Quantity:</strong>
-  <%= @product.quantity %>
+  <%#= @product.quantity %>
 </p>
 
 <p>
   <strong>Min quantity:</strong>
-  <%= @product.min_quantity %>
+  <%#= @product.min_quantity %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  <%#= @product.price %>
 </p>
 
 <p>
   <strong>Discount:</strong>
-  <%= @product.discount %>
+  <%#= @product.discount %>
 </p>
 
 <p>
   <strong>Subscription date:</strong>
-  <%= @product.subscription_date %>
+  <%#= @product.subscription_date %>
 </p>
 
 <p>
   <strong>Min delivery date:</strong>
-  <%= @product.min_delivery_date %>
+  <%#= @product.min_delivery_date %>
 </p>
 
 <p>
   <strong>Product category:</strong>
-  <%= @product.product_category %>
+  <%#= @product.product_category %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%#= link_to 'Edit', edit_product_path(@product) %> |
+<%#= link_to 'Back', products_path %>
+-->
+
+<div class="single">
+			<div class="container">
+						<div class="single-top-main">
+	   		<div class="col-md-5 single-top">
+	   		<div class="single-w3agile">
+							
+<div id="picture-frame">
+<%unless @product.product_image1.nil?%>
+<%=image_tag @product.product_image1, class: "img-responsive"%>
+<%else%>
+<%=image_tag 'no_img.png', class: "img-responsive"%>
+<%end%>
+			<%# <img src="images/si.jpg" data-src="images/si-1.jpg" alt="" class="img-responsive"/> %>
+		</div>
+										<script src="js/jquery.zoomtoo.js"></script>
+								<script>
+			$(function() {
+				$("#picture-frame").zoomToo({
+					magnify: 1
+				});
+			});
+		</script>
+		
+		
+			</div>
+			</div>
+			<div class="col-md-7 single-top-left ">
+								<div class="single-right">
+				<h3><%= @product.product_name%></h3>
+				
+					
+				 <div class="pr-single">
+				  <p class="reduced "><del><%= @product.price%>Rs</del><%= @product.price.to_i - 100/(@product.discount.to_i)%> Rs</p>
+				</div>
+				<div class="block block-w3">
+					<div class="starbox small ghosting"> </div>
+				</div>
+				<p class="in-pa"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+			   	
+				<ul class="social-top">
+					<li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+					<li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+					<li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+					<li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+				</ul>
+					<div class="add add-3">
+										
+										   <%= link_to "Buy now", orders_order_path(product: @product), class: "btn btn-danger my-cart-btn my-cart-b "%>
+										</div>
+				
+			   
+			<div class="clearfix"> </div>
+			</div>
+		 
+
+			</div>
+		   <div class="clearfix"> </div>
+	   </div>	
+				 
+				
+	</div>
+</div>

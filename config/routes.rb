@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get 'pages/about'
     
     get 'pages/register'
+    get 'pages/contact'
+    get 'orders/order'
 
     post 'pages/login_attempt'
   resources :product_categories

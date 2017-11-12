@@ -4,15 +4,16 @@
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="<%= pages_dashboard_path%>"><b>K<br>T<br>I</b> &nbsp Kurinjithinai<span>The Food From God</span></a></h1>
+				<h1 ><a href="<%= pages_dashboard_path%>"><b>K<br>T<br>I</b> &nbsp <%=image_tag "logo.png", class: "logo-image"%></a></h1>
 			</div>
 			<div class="head-t">
 				<ul class="card">
 					<li><a href="#" ><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a></li>
+					<%if current_user.present?%>
+					<li><a href="<%=orders_path(id: current_user.id)%>" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
 					
-					<li><a href="#" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
 					<li><a href="#" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
-
+					<%end%>
 					<%unless current_user.present?%>
 					<li><a href="<%= pages_register_path%>" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
 					<li><a href="<%= pages_login_path%>" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
@@ -58,10 +59,7 @@
 										<div class="col-sm-3">
 											<ul class="multi-column-dropdown">
 			
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Water & Beverages</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Fruits & Vegetables</a></li>
-												<li><a href="#"> <i class="fa fa-angle-right" aria-hidden="true"></i>Staples</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Branded Food</a></li>
+												<li><a href="<%= pages_dashboard_path(id: 1)%>"><i class="fa fa-angle-right" aria-hidden="true"></i>A1 Milk</a></li>
 										
 											</ul>
 										
@@ -70,10 +68,6 @@
 										
 											<ul class="multi-column-dropdown">
 												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Breakfast &amp; Cereal</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Snacks</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Spices</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Biscuit &amp; Cookie</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Sweets</a></li>
 										
 											</ul>
 										
@@ -82,14 +76,11 @@
 										
 											<ul class="multi-column-dropdown">
 												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Pickle & Condiment</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Instant Food</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Dry Fruit</a></li>
-												<li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Tea &amp; Coffee</a></li>
 										
 											</ul>
 										</div>
 										<div class="col-sm-3 w3l">
-											<a href="#"><img src="images/me.png" class="img-responsive" alt=""></a>
+											<a href="#"><%= image_tag "me.png", class: "img-responsive"%></a>
 										</div>
 										<div class="clearfix"></div>
 									</div>	
@@ -132,7 +123,7 @@
 											</ul>
 										</div>
 										<div class="col-sm-3 w3l">
-											<a href="#"><img src="images/me1.png" class="img-responsive" alt=""></a>
+											<a href="#"><%= image_tag "me1.png" ,class: "img-responsive"%></a>
 										</div>
 										<div class="clearfix"></div>
 									</div>	
@@ -196,3 +187,9 @@
 				</div>			
 </div>
   <!---->
+  <style>
+  .logo-image{
+	  height: 50px;
+	  width: 300px;
+  }
+  </style>

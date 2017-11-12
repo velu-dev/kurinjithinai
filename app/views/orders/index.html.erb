@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Product</th>
-      <th>Customer references</th>
+      <th>Customer</th>
       <th>Quantity</th>
       <th>Total cost</th>
       <th>Payment</th>
@@ -20,8 +20,8 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.product %></td>
-        <td><%= order.customer_references %></td>
+        <td><%= order.product.product_name %></td>
+        <td><%= order.customer.full_name %></td>
         <td><%= order.quantity %></td>
         <td><%= order.total_cost %></td>
         <td><%= order.payment %></td>
@@ -30,7 +30,7 @@
         <td><%= order.order_status %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Cancel', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -17,3 +17,7 @@
  /* @import "font-awesome-sprockets"; */
  @import "font-awesome";
  
+body{
+    /* bklbnfk */
+    font-size: 15px !important;
+}

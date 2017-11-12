@@ -184,13 +184,13 @@ img.img-head {
 .logo h1{
    font-family: 'Montserrat', sans-serif;
     font-size: 3em;
-    color: #000;
+    /* color: #000; */
 	display: inline-block;
 	position:relative;
 }
 .logo h1 a{
     text-decoration:none;
-    color: #000;
+    /* color: #000; */
 }
 .logo h1 span {
     font-size: 12px;

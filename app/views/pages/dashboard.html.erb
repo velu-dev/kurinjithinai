@@ -8,7 +8,7 @@
 </ol>
 <div class="carousel-inner" role="listbox">
   <div class="item active">
-   <a href="#"> <%= image_tag 'ba.jpg' , class: "first-slide"%></a>
+   <a href="#"> <%= image_tag 'slide1.png' , class: "first-slide"%></a>
  
   </div>
   <div class="item">
@@ -33,30 +33,36 @@
         </div>
     </div>
         <div class=" con-w3l">
-        <%15.times do%>
-                    <div class="col-md-3 pro-1">
-                        <div class="col-m">
-                        <a href="#" data-toggle="modal" data-target="#myModal17" class="offer-img">
-                                <img src="assets/of16.png" class="img-responsive" alt="">
-                            </a>
-                            <div class="mid-1">
-                                <div class="women">
-                                    <h6><a href="#">Moisturiser</a>(500 g)</h6>                         
-                                </div>
-                                <div class="mid-2">
-                                    <p ><label>$7.00</label><em class="item_price">$6.00</em></p>
-                                      <div class="block">
-                                        <div class="starbox small ghosting"> </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                    <div class="add add-2">
-                                   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="assets/of16.png">Add to Cart</button>
-                                   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="assets/of16.png">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <%@products.map do|product|%>
+            <div class="col-md-3 m-wthree">
+								<div class="col-m product-image">								
+									<a href="#" data-toggle="modal" data-target="#myModal1" class="offer-img">
+                                  <%unless product.product_image1.nil?%>
+                                    <%=image_tag product.product_image1, class: "img-responsive"%>
+                                    <%else%>
+                                    <%=image_tag 'no_img.png', class: "img-responsive"%>
+                                    <%end%>
+										<div class="offer"><p><span>Offer</span></p></div>
+									</a>
+									<div class="mid-1">
+										<div class="women">
+											<h6><a href="single.html"><%=product.product_name%></a>(<%=product.product_category.unit.unit_name%>)</h6>							
+										</div>
+										<div class="mid-2">
+											<p ><label><%=product.price%></label><em class="item_price"><%= product.price.to_i - 100/(product.discount.to_i)%></em></p>
+											  <div class="block">
+												<div class="starbox small ghosting"> </div>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="add">
+										   <%= link_to "Add Cart", carts_path, class: "btn btn-danger my-cart-btn my-cart-b "%>
+										   <%= link_to "View", product_path(product), class: "btn btn-danger my-cart-btn my-cart-b "%>
+										</div>
+										
+									</div>
+								</div>
+							</div>
 <%end%>
 </div>
 </div>
@@ -277,14 +283,11 @@
     }
 
 
-     </style>   <!-- </div> -->
-       
-   
-
-  </head>
-  <body>
-    
-
- 
-
--->
+     </style>    </div> -->
+     <style>
+    .offer-img img {
+        margin: 0 auto !important;
+        width: 55% !important;
+        height: 100px !important;
+    }
+     </style>
