@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap'
 gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.4.0'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem "mini_magick"
